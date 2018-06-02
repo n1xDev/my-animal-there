@@ -1,0 +1,165 @@
+<! DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Sn0w Dev</title>
+	<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">-->
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" ></script>
+</head>
+<body>
+<div class="container-fluid" style="padding:0;">
+	<div class="boody">
+		<div class="header">
+			<div class="logo">
+				<center>
+					<img style="margin-top: 5%;" src="img/logo.png">
+				</center>
+			</div>
+			<div class="menu">
+				<div class="butt" align="right">
+					<a href="/"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Главная</button></a>
+					<a href="/animals"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Животные</button></a>
+					<a href="#"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Контакты</button></a>
+					<a href="/"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default" id="enter">Вход</button></a>
+				</div>
+			</div>
+		</div>
+		
+		 <div class="rega" style="width: 100%;height: 650px;background-color: rgba(0,0,0,0.6);z-index: 10000;position: absolute; display: none;">
+
+		  <div class="regaas">
+		 <a href="#"><img src="img/icon.png" id="escapa" style="width:18px;height:18px;position:absolute;top:5px;left:90%;"></a>
+				<form role="form" method="POST" action="/regMe" name="regMe">
+					<div class="form-group">
+					    <label style="margin-left:90px;" for="exampleInputEmail1">ФИО</label>
+					    <input style="width:200px;" type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="FIO">
+					  </div>
+					  <div class="form-group">
+					    <label style="margin-left:83px;" for="exampleInputEmail1">Email</label>
+					    <input style="width:200px;" type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email">
+					  </div>
+					  <div class="form-group">
+					    <label style="margin-left:74px;" for="exampleInputEmail1">Телефон</label>
+					    <input style="width:200px;" type="text" class="form-control" id="exampleInputEmail1" name="phone" placeholder="Phone">
+					  </div>
+					  <div class="form-group">
+					    <label style="margin-left:77px;" for="exampleInputPassword1">Пароль</label>
+					    <input style="width:200px;" type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+					  </div>
+					 
+					  <button type="submit"  style="margin-left:50px;"  class="btn btn-default">Регистрация</button>
+				</form>
+
+				</div>
+			</div>
+
+		
+		
+		<div class="mapa" style="height:680px;">
+		<div style="position:absolute;z-index:10;top:50px;/* left:450px; */width:100%;height:5%;/* margin-left:28px; */width: 319px;padding-top:2px;/* background-color: white; */left: 50%;margin-left: -160px;">
+			<ul style="margin-top:10px;margin-left:10px;" class="dropdown">
+			 <li class="dropdown-top">
+			 <a class="dropdown-top" href="/">Страна</a>
+			 <ul class="dropdown-inside">
+			 <li><a onclick="change_country(0); initMap();">Австралия</a></li>
+			 <li><a onclick="change_country(1); initMap();">Австрия</a></li>
+			 <li><a onclick="change_country(2); initMap();">Россия</a></li>
+			 <li><a onclick="change_country(3); initMap();">Бразилия</a></li>
+			 <li><a onclick="change_country(4); initMap();">Белоруссия</a></li>
+			 </ul>
+			 </li>
+			</ul>
+			<ul style="padding-bottom:7px;margin-top:10px;margin-right:40px;" class="dropdown">
+			 <li class="dropdown-top">
+			 <a class="dropdown-top" href="/">Регион</a>
+			 <ul class="dropdown-inside">
+			 <li><a href="/">1</a></li>
+			 <li><a href="/">2</a></li>
+			 <li><a href="/">3</a></li>
+			 <li><a href="/">4</a></li>
+			 <li><a href="/">5</a></li>
+			 <li><a href="/">6</a></li>
+			 <li><a href="/">7</a></li>
+			 </ul>
+			 </li>
+
+			 <ul style="margin-top:0px;margin-left:20px;" class="dropdown">
+			 <li class="dropdown-top">
+			 <a class="dropdown-top" href="/">Зоопарк</a>
+			 <ul class="dropdown-inside">
+			 <li><a href="/">1</a></li>
+			 <li><a href="/">2</a></li>
+			 <li><a href="/">3</a></li>
+			 <li><a href="/">4</a></li>
+			 
+			 </ul>
+			 </li>
+			
+		</ul></ul>
+	
+		</div>
+			<div style="width:100%;height:100%;margin:0px auto;border:2px solid #ccc;" id="map"></div>
+		</div>
+
+		
+	
+		<footer>
+			<p class="copyt">Copyright &copy; Sn0w Dev</p>
+		</footer>
+	</div>
+</div>
+<script>
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_KC72-RY4azQ-kIrtSVLmKxQ7FhRplVo&signed_in=true&callback=initMap"></script>
+<script type="text/javascript">
+	var lat_pos = 55.766017;
+	var lng_pos = 49.133877;
+
+	function change_country(c_val) {
+		switch(c_val) {
+			case 0: { lat_pos = -26.767151; lng_pos = 138.7326053; break; };
+			case 1: { lat_pos = 47.778072; lng_pos = 14.0447973; break; };
+			case 2: { lat_pos = 55.766017; lng_pos = 49.133877; break; };
+			case 3: { lat_pos = -4.696289; lng_pos = -59.4599687; break; };
+			case 4: { lat_pos = 53.931643; lng_pos = 27.4884463; break; };
+			default: { break; };
+		}
+	}
+
+	var popup =document.querySelector('.rega');
+	var enter = document.querySelector('#enter');
+	console.log(enter);
+	enter.addEventListener('click', function() {
+		popup.style.display ='block';
+	}, false);
+	var escapa = document.querySelector('#escapa');
+	console.log(escapa);
+	escapa.addEventListener('click', function() {
+		popup.style.display ='none';
+	}, false);
+
+	function initMap() {
+		var myLatLng = {lat: lat_pos, lng: lng_pos};
+		var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 16,
+		    center: myLatLng
+		});
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+		    map: map,
+		    title: 'Sn0wDev -> Eco!'
+		});
+		marker.addListener('click', function() {
+			popup.style.display ='block';
+		});
+	}
+</script>
+
+</body>
+</html>

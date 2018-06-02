@@ -1,0 +1,53 @@
+<! DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Sn0w Dev</title>
+	<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">-->
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" ></script> 
+		<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="padding:0;">
+	<div class="boody" style="height:740px;">
+		<div class="header">
+			<div class="logo">
+				<center>
+					<img style="margin-top: 5%;" src="img/logo.png">
+				</center>
+			</div>
+			<div class="menu">
+				<div class="butt" align="right">
+					<a href="/"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Главная</button></a>
+					<a href="/animals"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Животные</button></a>
+					<a href="#"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Контакты</button></a>
+					<a href="/"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Вход</button></a>
+				</div>
+			</div>
+		</div>
+			{% for one_post in post_names %} 
+			<div class="row12">
+				<div class="imaga">
+					<img style="width: 152px;height: 120px;"src="{{ one_post[2] }}">
+				</div>
+				<div class="tetax">
+					<h3>{{ one_post[0] }}</h3>
+					<p>{{ one_post[1] }}</p>
+					<a href="/zoo"><button style="clear: right;float:right;margin-right:5px;margin-top:-27px;box-shadow: 1px 1px 1px rgba(0,0,0,0.6)" type="button" class="btn btn-default">Подробнее</button></a>
+				</div>
+			</div>
+			{% endfor %}
+			<div style="width:100%;height:270px;"></div>
+		<footer style="bottom:5px;">
+			<p class="copyt">Copyright &copy; Sn0w Dev</p>
+		</footer>
+	</div>
+</div>
+
+</body>
+</html>

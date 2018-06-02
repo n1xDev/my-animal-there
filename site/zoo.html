@@ -1,0 +1,51 @@
+<! DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Sn0w Dev</title>
+	<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">-->
+	<link rel="stylesheet" type="text/css" href="css/style3.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" ></script> 
+</head>
+<body>
+<div class="container-fluid" style="padding:0;">
+	<div class="boody" style="height:750px;">
+		<div class="header">
+			<div class="logo">
+				<center>
+					<img style="margin-top: 5%;" src="img/logo.png">
+				</center>
+			</div>
+			<div class="menu">
+				<div class="butt" align="right">
+					<a href="/"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Главная</button></a>
+					<a href="/animals"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Животные</button></a>
+					<a href="#"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Контакты</button></a>
+					<a href="/"><button  style="margin-right:10px;" align="right" type="button" class="btn btn-default">Вход</button></a>
+				</div>
+			</div>
+		</div>
+			<div class="infata" style="margin-top:40px;">
+				<img style="width: 100%;height: 480px;border-radius:5px;" id="bg" src="{{ url_for('video_feed') }}">
+ 				<!--<video style="width: 100%;height: 500px;"  src="Амурский тигр.mp4" controls></video> -->
+				
+			</div>
+			<div class="vibpom">
+			<a href="#"><button style="padding:10 30 10 30;margin:10px;" align="right" type="button" class="btn btn-success">Покормить</button></a>
+			<a href="#"><button style="padding:10 30 10 30;margin:10px;"  align="right" type="button" class="btn btn-primary">Подарить игрушку</button></a>
+			<a href="#"><button style="padding:10 30 10 30;margin:10px;"  align="right" type="button" class="btn btn-danger">Помыть</button></a>
+			<a href="#"><button style="padding:10 30 10 30;margin:10px;"  align="right" type="button" class="btn btn-warning">Убрать в клетке</button></a>
+			</div>
+		<footer style="position:bottom;">
+			<p class="copyt">Copyright &copy; Sn0w Dev</p>
+		</footer>
+	</div>
+</div>
+
+</body>
+</html>
