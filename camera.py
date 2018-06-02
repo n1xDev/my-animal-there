@@ -1,6 +1,6 @@
 import cv2
 
-class AnyCamera(object):
+class VideoCamera(object):
     def __init__(self):
         self.video = cv2.VideoCapture('http://wmccpinetop.axiscam.net/mjpg/video.mjpg')
     

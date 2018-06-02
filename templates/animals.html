@@ -18,7 +18,7 @@
 		<div class="header">
 			<div class="logo">
 				<center>
-					<img style="margin-top: 5%;" src="img/logo.png">
+					<img style="margin-top: 5%;" src="logo.png">
 				</center>
 			</div>
 			<div class="menu">
@@ -33,12 +33,12 @@
 			{% for one_post in post_names %} 
 			<div class="row12">
 				<div class="imaga">
-					<img style="width: 152px;height: 120px;"src="{{ one_post[2] }}">
+					<img style="width: 152px;height: 120px;"src="{{ one_post[3] }}">
 				</div>
 				<div class="tetax">
-					<h3>{{ one_post[0] }}</h3>
-					<p>{{ one_post[1] }}</p>
-					<a href="/zoo"><button style="clear: right;float:right;margin-right:5px;margin-top:-27px;box-shadow: 1px 1px 1px rgba(0,0,0,0.6)" type="button" class="btn btn-default">Подробнее</button></a>
+					<h3>{{ one_post[1] }}</h3>
+					<p>{{ one_post[2] }}</p>
+					<a href="/mystream"><button style="clear: right;float:right;margin-right:5px;margin-top:-27px;box-shadow: 1px 1px 1px rgba(0,0,0,0.6)" type="button" class="btn btn-default">Подробнее</button></a>
 				</div>
 			</div>
 			{% endfor %}
